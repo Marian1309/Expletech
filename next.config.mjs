@@ -2,7 +2,16 @@
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true
+  swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.allo.ua',
+        pathname: '**'
+      }
+    ]
+  }
 };
 
 export default nextConfig;

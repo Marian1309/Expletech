@@ -12,6 +12,7 @@ You will need [Node.js](https://nodejs.org) version 16.x.x or greater installed 
 - **Core:** [React](https://react.dev)
 - **TypeScript** [TypeScript](https://www.typescriptlang.org)
 - **Framework:** [Next.js](https://nextjs.org)
+- **Statemanagement:** [Redux-Toolkit](https://redux-toolkit.js.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **Work with API:** [Axios](https://axios-http.com)
 

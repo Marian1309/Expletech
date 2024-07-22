@@ -86,7 +86,7 @@ const config: Config = {
 
   plugins: [
     require('tailwindcss-animate'),
-    plugin(({ addUtilities }: unknown) => {
+    plugin(({ addUtilities }: any) => {
       addUtilities({
         '.flex-center': {
           display: 'flex',

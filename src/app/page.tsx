@@ -1,7 +1,14 @@
 import type { FC } from 'react';
 
+import { ProductList, SearchForm } from '@/components';
+
 const RootPage: FC = () => {
-  return <h1 className="h-adaptive text-xl flex-center">Starter</h1>;
+  return (
+    <div className="bg-[#eff6ff] text-xl">
+      <SearchForm />
+      <ProductList />
+    </div>
+  );
 };
 
 export default RootPage;

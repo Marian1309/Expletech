@@ -60,7 +60,7 @@
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-restricted-syntax": "off",
     "no-use-before-define": "off",
     "import/extensions": "off",

@@ -18,6 +18,11 @@ const prettierConfig = {
 
     '<THIRD_PARTY_MODULES>',
 
+    '^@/types',
+
+    '^@/context/store',
+    '^@/context/features/(.*)$',
+
     '^@/lib',
     '^@/components/(.*)$',
 

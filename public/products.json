@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Xiaomi Redmi Note 13 8/256 Midnight Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/1/1/1111_32.jpg",
+    "price": 7999,
+    "model": "Xiomi"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24 Ultra 12/512 Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-s928_galaxys24ultra_front_titaniumblack_231109_result_1.jpg",
+    "price": 56999,
+    "model": "Samsung"
+  },
+  {
+    "id": 3,
+    "name": "Apple iPhone 15 Pro Max 256GB Natural Titanium",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/i/p/iphone_15_pro_max_natural_titanium_pdp_image_position-1__ww-en_2.jpg",
+    "price": 54999,
+    "model": "Apple"
+  },
+  {
+    "id": 4,
+    "name": "Xiaomi 14 Ultra 16/512GB Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/3/2/321321321_6.jpg",
+    "price": 54999,
+    "model": "Xiaomi"
+  },
+  {
+    "id": 5,
+    "name": "Samsung Galaxy A25 5G 8/256 BLUEBLACK",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/s/m/sm-a256b_galaxy_a25_5g_blue_black_front_result_2.jpg",
+    "price": 11599,
+    "model": "Samsung"
+  },
+  {
+    "id": 6,
+    "name": "Xiaomi 13T Pro 12/512 Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/m/1/m12_m12a_black_back__3_2.jpg",
+    "price": 25999,
+    "model": "Xiaomi"
+  },
+  {
+    "id": 7,
+    "name": "Moto Edge 50 Pro 12/512 Luxe Lavender",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/2/5/2525_result.webp",
+    "price": 24999,
+    "model": "Moto"
+  },
+  {
+    "id": 8,
+    "name": "ZTE Blade V50 Design 8/128GB Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/n/s/nsg_zte__packshot_v50_design_black__1.jpg",
+    "price": 5199,
+    "model": "ZTE"
+  },
+  {
+    "id": 9,
+    "name": "Honor Magic5 Lite 5G 8/256 GB Midnight Black",
+    "image": "https://i.allo.ua/media/catalog/product/cache/3/image/736x512/9df78eab33525d08d6e5fb8d27136e95/6/8/687678678678678.jpg",
+    "price": 8999,
+    "model": "Honor"
+  }
+]
