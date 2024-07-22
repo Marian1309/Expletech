@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+.pnpm-lock.yaml
+
+# next.js
+.next
+
+# production
+build
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+
+# commit validation
+.husky/_
