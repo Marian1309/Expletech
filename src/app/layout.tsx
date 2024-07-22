@@ -8,12 +8,11 @@ import './globals.scss';
 const figtree = Figtree({ subsets: ['latin'], weight: ['400'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nextjs.marian1309.vercel.app'),
   title: {
-    template: '%s • Next.js 14',
-    default: 'Next.js 14'
+    template: '%s • Expletech',
+    default: 'Expletech'
   },
-  description: 'Next.js 14 Starter'
+  description: 'Expletech Test Task'
 };
 
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
