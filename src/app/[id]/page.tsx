@@ -1,10 +1,16 @@
 'use client';
 
-import type { FC } from 'react';
+import { type FC, useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import type { RootState } from '@/context/store';
+import type { Product } from '@/types';
+
+import type { AppDispatch, RootState } from '@/context/store';
+
+import { fetchProducts } from '@/context/features/productsSlice';
+
+import { ProductDetails } from '@/components';
 
 type Props = {
   params: {
@@ -14,12 +20,19 @@ type Props = {
 
 const ProductPage: FC<Props> = ({ params }) => {
   const { products } = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   const product = products.find((product) => product.id === +params.id);
 
-  console.log(product);
-
-  return <></>;
+  return (
+    <div className="h-adaptive flex-center">
+      <ProductDetails product={product as Product} />;
+    </div>
+  );
 };
 
 export default ProductPage;

@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-You will need [Node.js](https://nodejs.org) version 16.x.x or greater installed on your system.
+You will need [Node.js](https://nodejs.org) version 18.x.x or greater installed on your system.
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ npm i pnpm -g
 ### 2. Clone the repository
 
 ```bash
-git clone https://github.com/Marian1309/Next.js
+git clone https://github.com/Marian1309/Expletech
 ```
 
 ### 3. Install dependencies
@@ -36,11 +36,7 @@ git clone https://github.com/Marian1309/Next.js
 pnpm install
 ```
 
-### 4. Create a `.env` file
-
-Create a `.env` file in the root directory and add the environment variables as shown in the `.env` file.
-
-### 5. Run the application
+### 4. Run the application
 
 ```bash
 pnpm run dev

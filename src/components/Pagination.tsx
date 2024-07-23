@@ -13,6 +13,11 @@ const Pagination: FC<Props> = ({ currentPage, totalPages, onPageChange }) => {
     pages.push(i);
   }
 
+  const handlePageChange = (page: number) => {
+    onPageChange(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="flex-center">
       {pages.map((page) => (
@@ -23,7 +28,7 @@ const Pagination: FC<Props> = ({ currentPage, totalPages, onPageChange }) => {
               : 'bg-white text-blue-500'
           }`}
           key={page}
-          onClick={() => onPageChange(page)}
+          onClick={() => handlePageChange(page)}
         >
           {page}
         </button>

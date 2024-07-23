@@ -51,7 +51,7 @@ const SearchForm: FC = () => {
 
         <div className="w-full md:w-2/5 md:pl-2">
           <select
-            className="mb-4 w-full rounded-lg bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring focus:ring-blue-500 md:mb-0"
+            className="mb-4 w-full rounded-lg bg-white px-2 py-3 text-gray-800 focus:outline-none focus:ring focus:ring-blue-500 md:mb-0"
             onChange={handleModelChange}
             value={model}
           >
