@@ -62,6 +62,8 @@ const SearchForm: FC = () => {
             <option value="Moto">Moto</option>
             <option value="ZTE">ZTE</option>
             <option value="Honor">Honor</option>
+            <option value="POCO">POCO</option>
+            <option value="Motorola">Motorola</option>
           </select>
         </div>
 

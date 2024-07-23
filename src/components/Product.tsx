@@ -9,7 +9,7 @@ type Props = {
   product: Product;
 };
 
-const Product: FC<Props> = ({ product: { name, price, image } }) => {
+const Product: FC<Props> = ({ product: { id, name, price, image } }) => {
   return (
     <div className="relative rounded-xl bg-white shadow-md">
       <Image
@@ -42,7 +42,7 @@ const Product: FC<Props> = ({ product: { name, price, image } }) => {
 
           <Link
             className="text-md rounded-md bg-blue-500 px-4 py-2 text-center text-white hover:bg-blue-600"
-            href="/"
+            href={`/${id}`}
           >
             Details
           </Link>

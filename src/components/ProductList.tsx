@@ -1,6 +1,6 @@
 'use client';
 
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,16 +8,34 @@ import type { Product as ProductType } from '@/types';
 
 import type { AppDispatch, RootState } from '@/context/store';
 
-import { fetchProducts } from '@/context/features/productsSlice';
+import {
+  fetchProducts,
+  setCurrentPage
+} from '@/context/features/productsSlice';
 
+import Pagination from './Pagination';
 import Product from './Product';
 import Spinner from './Spinner';
 
 const ProductList: FC = () => {
-  const { filteredProducts, loading } = useSelector(
+  const { filteredProducts, products, loading, currentPage } = useSelector(
     (state: RootState) => state.products
   );
   const dispatch = useDispatch<AppDispatch>();
+  const productsPerPage = 6;
+
+  const handlePageChange = (page: number) => {
+    dispatch(setCurrentPage({ page }));
+  };
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -29,21 +47,33 @@ const ProductList: FC = () => {
     }
 
     if (products.length === 0) {
-      return <p>There is no products in the list.</p>;
+      return (
+        <p className="pt-8 text-center text-4xl">
+          There is no products in the list.
+        </p>
+      );
     }
 
     return (
-      <div className="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:p-8">
-        {products.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
-      </div>
+      <>
+        <div className="grid grid-cols-1 gap-6 p-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:p-8">
+          {currentProducts.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </div>
+
+        <Pagination
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+          totalPages={totalPages}
+        />
+      </>
     );
   };
 
   return (
     <div className="my-2 md:container xl:my-6">
-      {render(filteredProducts, loading)}
+      {render(currentProducts, loading)}
     </div>
   );
 };
