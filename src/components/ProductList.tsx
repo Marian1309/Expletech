@@ -1,6 +1,7 @@
 'use client';
 
-import { type FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,34 +9,24 @@ import type { Product as ProductType } from '@/types';
 
 import type { AppDispatch, RootState } from '@/context/store';
 
-import {
-  fetchProducts,
-  setCurrentPage
-} from '@/context/features/productsSlice';
+import { fetchProducts } from '@/context/features/productsSlice';
+
+import { usePagination } from '@/hooks';
 
 import Pagination from './Pagination';
 import Product from './Product';
 import Spinner from './Spinner';
 
 const ProductList: FC = () => {
-  const { filteredProducts, products, loading, currentPage } = useSelector(
+  const { loading, currentPage } = useSelector(
     (state: RootState) => state.products
   );
   const dispatch = useDispatch<AppDispatch>();
-  const productsPerPage = 6;
 
-  const handlePageChange = (page: number) => {
-    dispatch(setCurrentPage({ page }));
-  };
-
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-
-  const currentProducts = filteredProducts.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
+  const { currentProducts, handlePageChange, totalPages } = usePagination(
+    dispatch,
+    8
   );
-  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   useEffect(() => {
     dispatch(fetchProducts());
