@@ -23,29 +23,32 @@ const ProductDetails: FC<Props> = ({ product }) => {
     ));
   };
 
-  return (
-    <div className="m-4 max-w-2xl rounded bg-white p-6 shadow-md flex-center sm:min-w-[416.5px] sm:max-w-max md:min-w-min">
-      <div className="flex flex-col md:flex-row md:items-center">
-        {product ? (
-          <Image
-            alt={product?.name}
-            className="w-full rounded py-10 md:w-3/5"
-            height={0}
-            priority
-            sizes="250vw"
-            src={product?.image}
-            width={0}
-          />
-        ) : (
+  const render = (product: Product) => {
+    if (!product) {
+      return (
+        <div className="px-32">
           <Spinner loading={!product} />
-        )}
+        </div>
+      );
+    }
 
+    return (
+      <>
+        <Image
+          alt={product?.name}
+          className="w-full rounded py-10 md:w-3/5"
+          height={0}
+          priority
+          sizes="250vw"
+          src={product?.image}
+          width={0}
+        />
         <div className="lg:text-lg xl:text-xl">
           <h2 className="text-md mb-2 font-bold lg:text-xl xl:text-2xl">
             {product?.name}
           </h2>
 
-          <p className="mb-4 text-gray-700 md:my-4 lg:text-xl xl:text-2xl">
+          <p className="mb-4 font-bold text-gray-700 md:my-4 lg:text-xl xl:text-2xl">
             {product?.price ? `${product.price}$` : null}
           </p>
 
@@ -57,7 +60,15 @@ const ProductDetails: FC<Props> = ({ product }) => {
           >
             Back to Listing page
           </Link>
-        </div>
+        </div>{' '}
+      </>
+    );
+  };
+
+  return (
+    <div className="m-4 max-w-2xl rounded bg-white p-6 shadow-md flex-center sm:min-w-[416.5px] sm:max-w-max md:min-w-min">
+      <div className="flex flex-col md:flex-row md:items-center">
+        {render(product)}
       </div>
     </div>
   );

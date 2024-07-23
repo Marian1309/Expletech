@@ -1,5 +1,3 @@
-import { cache } from 'react';
-
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
@@ -20,17 +18,14 @@ const initialState: ProductsState = {
   currentPage: 1
 };
 
-export const fetchProducts = createAsyncThunk(
-  'products/fetch',
-  cache(async () => {
-    try {
-      const { data } = await axios.get('/products.json');
-      return data;
-    } catch (err: unknown) {
-      return [];
-    }
-  })
-);
+export const fetchProducts = createAsyncThunk('products/fetch', async () => {
+  try {
+    const { data } = await axios.get('/products.json');
+    return data;
+  } catch (err: unknown) {
+    return [];
+  }
+});
 
 export const productsSlice = createSlice({
   name: 'products',
